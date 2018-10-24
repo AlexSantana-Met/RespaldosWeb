@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <p:growl id="msgs" showDetail="true" />
+
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:outputLabel for="inline" value="Seleccione fecha en la que desdea agendar su cita:" />
+            <p:calendar id="inline" value="Fecha" mode="inline" />
+
+
+        </h:panelGrid>
+
+
+    </h:body>
+
+
+    <h:body>
+        <ui:composition template="plantillas/main.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <div id="menu" align="center">
+                        <h:panelGrid columns="5" cellpadding="1" cellspacing="1" class="panelMenu" width="100%">
+                            <h:panelGroup>
+                                <h:commandButton id="home" value="INICIO" class="btn " action="index.xhtml"></h:commandButton>
+                                <h:commandButton id="ing" value="INGRESAR" class="btn btnHover"></h:commandButton>
+                                <h:commandButton id="reg" value="REGISTRARSE" class="btn" action="Registro.xhtml"></h:commandButton>
+                                <h:commandButton id="prod" value="PRODUCTOS/SERVICIOS" class="btn" action="ProdServ.xhtml"></h:commandButton>
+                                <h:commandButton id="cont" value="CONTÁCTANOS" class="btn" action="Contactar.xhtml"></h:commandButton>
+                            </h:panelGroup>
+                        </h:panelGrid>
+                    </div>
+                </h:form>
+                <div align="center">
+                    <br/>
+                    <br/>
+                    <h:form>
+                        <h:panelGrid columns="2" cellpadding="1" width="70%">
+                            <p:outputLabel for="inline" value="Seleccione la fecha a asignar su cita:" />
+                            <p:outputLabel for="tablaCli" value="Seleccione la Hora a asignar su cita:" />
+                            <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" />
+                           
+                            <h:dataTable id="tablaCli" value="#{hora.hora}" var="dato" captionClass="caption" styleClass="tabla">
+
+                                <h:column >
+                                    <f:facet name="header">Fecha   </f:facet>
+                                        #{dato}
+                                </h:column> 
+
+                                <h:column  >
+                                    <f:facet name="header">   Agendar</f:facet>
+                                    <b:button id="see" 
+                                              look="btn ver"
+                                              icon-awesome="eye"
+                                              value="Apartar">
+                                    </b:button>
+                                    </h:column>
+                            </h:dataTable>
+                            <br/>
+                            <br/>
+                            <h:form>
+                                <h:commandButton class="btn agregar" value="Enviar asignaión" action="Formulario.xhtml"/>
+                            </h:form>
+                        </h:panelGrid>
+                    </h:form>
+                    <br/>
+                    <br/>
+                </div>
+
+
+
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+
+</html>
+

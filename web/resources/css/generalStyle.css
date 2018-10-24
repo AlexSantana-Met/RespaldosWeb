@@ -259,7 +259,7 @@ par, impar{
 #tablaCli th, #tablaCli td { 
     padding: 7px;
     /*padding: 1.5rem;*/
-    font-size: 1.3rem; 
+    font-size: 12px; 
     transition: .4s ease-in; }
 
 #tablaCli tr {

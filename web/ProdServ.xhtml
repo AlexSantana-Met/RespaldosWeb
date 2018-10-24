@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -26,11 +27,125 @@
                             <br/>
                             <h2>Óptica Andes Popayán</h2>
                             <br/>
-                            <h:panelGrid columns="2" cellpadding="1" cellspacing="1" width="80%">
+                            <h:panelGrid columns="2" cellpadding="1" cellspacing="1" width="100%">
                                 <h:graphicImage library="images" name="lentes.jpg" width="310" height="130"/>
                                 <h:outputLabel>
                                     En <b>Óptica Andes Popayán S.A.S.</b> contamos con profesionales especializados y dispuestos en ofrecer servicios de calidad, con el fin de aportar en la salud visual de todos nuestros clientes.
                                 </h:outputLabel>
+                 
+                              
+                    <h:graphicImage library="images" name="maquina.jpg" width="310" height="130"/>
+                                           
+                               
+                    
+                     <p:accordionPanel multiple="true">
+        <p:tab title="Consulta de optometría">
+            <h:panelGrid columns="1" cellpadding="10">
+               
+                <h:outputLabel style="text-align: justify">
+                    
+                    
+
+
+                    <br/>La Óptica cuenta con consultorios debidamente equipados con los instrumentos necesarios para realizar de manera profesional el examen optométrico para anteojos.
+<br/>En nuestra consulta, realizada en nuestro punto de servicio, evaluamos:
+<br/>
+<br/>
+    - Agudeza visual. 
+    <br/>
+    - Examen externo.
+    <br/>
+    - Motilidad ocular .
+    <br/>
+    - Percepción del color.
+    <br/>
+    - Toma de presión intraocular.
+    <br/>
+    - Fondo de ojo para evaluación del nervio óptico.
+    <br/>
+    - Formulación.
+    <br/>
+    - Consulta y sesiones de ortóptica.
+    <br/>
+    - Pruebas de discriminación al color. 
+    <br/>
+    - Exámenes de ingreso. 
+    <br/>
+    - Adaptación de lentes de contacto. 
+    <br/>
+    - Adaptación y manejo de prótesis oculares.
+    <br/>
+                </h:outputLabel>      
+            </h:panelGrid>
+        </p:tab>
+       
+    </p:accordionPanel>
+                 
+                                 
+                    
+                 <h:graphicImage library="images" name="lentes5.jpg" width="100" height="100"/>
+                                <h:outputLabel>
+                                    <b>LENTES</b>      
+                                </h:outputLabel>
+                 
+                               
+                                
+                                
+         <p:accordionPanel multiple="true">
+        <p:tab title="Lentes monofocales">
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText
+                    value="Estos lentes se utilizan para corregir deficiencias de visión en una sola distancia. Normalmente en visión cercana o lejana." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Lentes bifocales">
+            <h:panelGrid columns="2" cellpadding="10">
+                
+                <h:outputText value="Son lentes con dos poderes para corregir deficiencias en visión cercana y lejana a la vez. Se caracterizan por tener una zona para lejos y un segmento para cerca. Dentro de este grupo existen varios diseños como los Flat Top, Invisible, Ultex y Ejecutivo." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Lentes ocupacionales">
+            <h:panelGrid columns="2" cellpadding="10">
+              
+                <h:outputText value="Son ideales para corregir deficiencias en distancias intermedias. Son los indicados para aquellas personas que trabajan en un escritorio y necesitan claridad para trabajar con el computador (zona intermedia) y leer (zona de cerca)." />
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+                    
+                    
+                        <p:accordionPanel multiple="true">
+        <p:tab title="Lentes prograsivos">
+            <h:panelGrid columns="2" cellpadding="10">
+               
+                <h:outputText
+                    value="Estos lentes se utilizan para corregir deficiencias de visión en una sola distancia. Normalmente en visión cercana o lejana." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Lentes fotocromaticos">
+            <h:panelGrid columns="2" cellpadding="10">
+                
+                <h:outputText value="Estos lentes tienen tres zonas ópticas, una para cerca, una para distancia intermedia y una para lejos. Cada una tiene fórmulas diferentes, las cuales van variando de la zona de lejos a la zona de lectura de manera progresiva como su nombre lo indica. No presenta saltos de imagen como los bifocales, ni poseen ningún tipo división segmento visible." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Lentes polarizados">
+            <h:panelGrid columns="2" cellpadding="10">
+              
+                <h:outputText value="SSon los mejores lentes para el sol, ya que eliminan cualquier reflejo de luz proveniente del agua, en las carreteras mojadas, panorámicos del auto, eliminando la fatiga ocular y brindando una visión rica en contrastes." />
+            </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+                    
+                    
+                    
+                    
+                    
+    
+    
+                                
+                                
+                                
+                                
                             </h:panelGrid>
                         </div>
                     </div>

@@ -109,7 +109,7 @@ and open the template in the editor.
     margin: 0px 10px;
 }
 
-#logout {
+.btnLog {
     vertical-align: middle;
     height: 30px;
     width: 140px;
@@ -236,44 +236,54 @@ par, impar{
     font-size: 12px;
 }
 
-#tablaCli,
+#tablaCon,
 #tableEmpleado {
     width: 80%;
 }
 
 #tableEmpleado table thead tr th,
 #tableEmpleado table tr td,
-#tablaCli table thead tr th,
-#tablaCli table tr td {
+#tablaCon table thead tr th,
+#tablaCon table tr td {
     border: 1px rgba(0,0,0,.2) solid;
     padding: 10px 15px;
 }
 
-#tablaCli table {
+#tablaCon table {
     border-collapse: collapse;  
     width: 80%; 
     /*margin: 0 auto 5rem;*/
     border: 1px rgba(0,0,0,.2) solid;
 }
 
-#tablaCli th, #tablaCli td { 
+#tablaCon th, #tablaCon td { 
     padding: 7px;
+    /*height: 20px;*/
     /*padding: 1.5rem;*/
     font-size: 12px; 
     transition: .4s ease-in; }
 
-#tablaCli tr {
-    background: hsla(54, 66%, 87%,.7);}
-
-#tablaCli th{
-    background: hsl(101, 34%, 44%);
-    text-align: center;
+#tablaCon tr {
+    /*background: hsla(54, 66%, 87%,.7);*/
+    background-color: rgba(226,239,217,.9);
 }
 
-#tablaCli tr:nth-child(even) { 
-    background: hsla(76, 54%, 71%, .7); }
-#tablaCli tr:hover:not(#firstrow), tr:hover td:empty {background: #d7d4cd; pointer-events: visible;}
-#tablaCli tr:hover:not(#firstrow) { transform: scale(1.2); font-weight: 700; box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);}
+#tablaCon th{
+    /*background: hsl(101, 34%, 44%);*/
+    text-align:center;
+    background:none repeat scroll 0 0 rgba(112,173,71,.9);
+    border-bottom:1px solid #000;  
+    padding:2px;
+    height: 30px;
+    color: #FFF;
+}
+
+#tablaCon tr:nth-child(even) { 
+    background-color: rgba(255,255,255,.9);
+    /*    background: rgba(0,0,0,.1); */
+}
+#tablaCon tr:hover:not(#firstrow), tr:hover td:empty {background: rgba(112,173,71, 0.6); pointer-events: visible;}
+#tablaCon tr:hover:not(#firstrow) { transform: scale(1.1); box-shadow: 0px 3px 7px rgba(112,173,71, 0.5);}
 
 .eliminar {background-color: #f44336;} 
 .eliminar:hover {background: #da190b;}
@@ -294,7 +304,7 @@ textarea{
 }
 
 .caption {
-    font-size: 20px;
+    font-size: 18px;
     color: #000;
     text-align: center;
     font-weight: bold;
@@ -329,4 +339,20 @@ textarea{
 }
 .col2 {
     width: 25%;
+}
+
+
+#panelCon {
+    align-items: center;
+    align-content: center;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    background-color: rgba(171,171,171,.4);
+}
+
+#add {
+    transition: 0.3s;
+    cursor: pointer;
+    width: 90px;
 }

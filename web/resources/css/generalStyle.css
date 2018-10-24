@@ -307,6 +307,7 @@ textarea{
     margin: 20px;
     align-items: center;
     align-content: center;
+    width: 80%;
 }
 
 #prodServ h2 {

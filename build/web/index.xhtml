@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Óptica Andes</title>
+        <link type="text/css" rel="stylesheet" href="resources/css/generalStyle.css"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="plantillas/main.xhtml">
+            <ui:define name="content">
+                <div id="menu" align="center">
+                    <h:form>
+                        <h:panelGrid columns="5" cellpadding="1" cellspacing="1" class="panelMenu" width="100%">
+                            <h:panelGroup>
+                                <h:commandButton id="home" value="INICIO" class="btn btnHover"></h:commandButton>
+                                <h:commandButton id="ing" value="INGRESAR" class="btn" action="Login.xhtml"></h:commandButton>
+                                <h:commandButton id="reg" value="REGISTRARSE" class="btn" action="Registro.xhtml"></h:commandButton>
+                                <h:commandButton id="prod" value="PRODUCTOS/SERVICIOS" class="btn" action="ProdServ.xhtml"></h:commandButton>
+                                <h:commandButton id="cont" value="CONTÁCTANOS" class="btn" action="Contactar.xhtml"></h:commandButton>
+                            </h:panelGroup>
+                        </h:panelGrid>
+                        <br/>
+                        <br/>
+                        <h:graphicImage class="img1" library="images" name="img1.png"/>
+                        <br/>
+                        <br/>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

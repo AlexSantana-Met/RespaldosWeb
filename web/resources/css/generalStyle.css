@@ -1,0 +1,331 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/10/2018, 11:48:03 PM
+    Author     : Alejandro
+*/
+
+.btn {
+    background: rgb(5, 76, 36);
+    color: #FFF;
+    font-size: 15px;
+    height: 35px;
+    border: none;
+    width: 180px;
+    margin-left: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.panelMenu {
+    background: rgb(5, 76, 36);
+    text-align: center;
+    position: initial;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.panelSup {
+    background: rgb(5, 76, 36);
+    text-align: center;
+}
+
+#menu .panelMenu h2,
+.panelSup h2 {
+    color: #FFF;
+}
+
+.btn:hover{
+    background: rgb(1, 45, 18);
+}
+
+.fondo {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/optica.jpg');
+    background-size: cover;
+    opacity: .6;
+    position: fixed;
+    filter: blur(8px);
+}
+
+.img1 {
+    border-radius: 5px;
+}
+
+.btnHover{
+    background: rgb(1, 45, 18);
+}
+
+.panelLog {
+    /*background-color: rgba(0, 90, 0, .9);*/
+    /*background-color: hsla(105, 27%, 74%, .7);*/
+    background: rgba(0,0,0,.5);
+    align-items: center;
+    align-content: center;
+    border-radius: 8px;
+    text-align: center;
+    /*color: #FFF;*/
+}
+
+.inp {
+    height: 25px;
+    width: 80%;
+    /*margin-left: 20px;*/
+}
+
+.tituloP {
+    align-self: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 60px;
+    /*color: rgb(55, 107, 1);*/
+    color: #FFF;
+}
+
+.btnL {
+    height: 30px;
+    width: 95px;
+    opacity: .8;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-weight: bold;
+    color: rgb(55, 107, 1);
+    position: relative;
+    background: transparent;
+    background: ghostwhite;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+    float:none;
+    text-align:center;
+    margin: 0px 10px;
+}
+
+#logout {
+    vertical-align: middle;
+    height: 30px;
+    width: 140px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-weight: bold;
+    color: rgb(55, 107, 1);
+    position: relative;
+    background: transparent;
+    background: ghostwhite;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+    float:none;
+    text-align:center;
+    margin: 0px 10px;
+}
+
+.panelLog .inp {
+    position: relative;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #FFF;
+    letter-spacing: 1;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #FFF;
+    outline: none;
+    background: transparent;
+}
+
+.panelLog h2 {
+    margin: 10px 0 10px;
+    padding: 0;
+    /*color: rgb(55, 107, 1);*/
+    color: #fff;
+    text-align: center;
+}
+
+.formRegistro {
+    width: 60%;
+    text-align: center;
+    background: rgba(0,0,0,.5);
+    color: #FFF;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+.formRegistro .inpRes {
+    padding-top: 10px;
+    position: relative;
+    font-size: 14px;
+    color: #FFF;
+    letter-spacing: 1;
+    border: none;
+    border-bottom: 2px solid #FFF;
+    outline: none;
+    background: transparent;
+    width: 170px;
+}
+
+.panelBack {
+    /*    background: rgba(0,0,0,.5);*/
+    align-items: center;
+    align-content: center;
+    border-radius: 8px;
+    text-align: center;
+    width: 60%;
+    background-color: rgba(171,171,171,.4);
+    /*background: rgba(0,0,0,.5);*/
+    padding: 15px 15px;
+}
+
+.panelMenu h3 {
+    color: #FFF;
+}
+#formDesc .textArea {
+    resize: none;
+    width: 500px;
+    font-family: 'Arial';
+    font-size: 13px;
+}
+
+/*.tabla {
+    text-align: left;
+    border: 1px #999 solid;
+}*/
+
+#tableEmpleado .tabla {   
+    border-collapse:collapse;
+    border:1px solid #000000;
+}
+
+#tableEmpleado .header {
+    text-align:center;
+    background:none repeat scroll 0 0 rgba(0,0,0,.3);
+    border-bottom:1px solid #000;  
+    padding:2px;
+    height: 30px;
+    color: #FFF;
+}
+
+#tableEmpleado .oddRow {
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFFF;	
+}
+
+#tableEmpleado .evenRow {
+    text-align:center;
+    background:none repeat scroll 0 0 #D3D3D3;
+}
+
+par, impar{
+    border: 1px #000 solid;
+}
+
+#res,#elim,#con {
+    height: 30px;
+    width: 80px;
+    font-size: 12px;
+}
+
+#tablaCli,
+#tableEmpleado {
+    width: 80%;
+}
+
+#tableEmpleado table thead tr th,
+#tableEmpleado table tr td,
+#tablaCli table thead tr th,
+#tablaCli table tr td {
+    border: 1px rgba(0,0,0,.2) solid;
+    padding: 10px 15px;
+}
+
+#tablaCli table {
+    border-collapse: collapse;  
+    width: 80%; 
+    /*margin: 0 auto 5rem;*/
+    border: 1px rgba(0,0,0,.2) solid;
+}
+
+#tablaCli th, #tablaCli td { 
+    padding: 7px;
+    /*padding: 1.5rem;*/
+    font-size: 1.3rem; 
+    transition: .4s ease-in; }
+
+#tablaCli tr {
+    background: hsla(54, 66%, 87%,.7);}
+
+#tablaCli th{
+    background: hsl(101, 34%, 44%);
+    text-align: center;
+}
+
+#tablaCli tr:nth-child(even) { 
+    background: hsla(76, 54%, 71%, .7); }
+#tablaCli tr:hover:not(#firstrow), tr:hover td:empty {background: #d7d4cd; pointer-events: visible;}
+#tablaCli tr:hover:not(#firstrow) { transform: scale(1.2); font-weight: 700; box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);}
+
+.eliminar {background-color: #f44336;} 
+.eliminar:hover {background: #da190b;}
+.agregar {background-color: #4CAF50;} 
+.agregar:hover {background-color: #46a049;}
+.ver {background-color: #2196F3;}
+.ver:hover {background: #0b7dda;}
+.volver {background-color: #ff9800;} 
+.volver:hover {background: #e68a00;}
+
+textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.caption {
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+}
+
+#prodServ {
+    background: rgba(255,255,255,.7);
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px;
+    align-items: center;
+    align-content: center;
+}
+
+#prodServ h2 {
+    text-align: center;
+    margin: 10px;
+    color: rgba(0, 90, 0, .9);
+    font-family: 'Courgette', sans-serif, cursive;
+    font-size: 20px;
+}
+
+#infor {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.col1 {
+    width: 75%;
+}
+.col2 {
+    width: 25%;
+}

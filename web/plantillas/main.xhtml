@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <h:outputStylesheet library="css" name="generalStyle.css"/>
+        <title>Óptica Andes</title>
+        <link rel="icon" type="image/x-icon" href="resources/images/logo.png"/>
+        <link href="https://fonts.googleapis.com/css?family=Courgette&amp;subset=latin-ext" rel="stylesheet"/>
+    </h:head>
+
+    <h:body>
+        <div class="fondo">
+        </div>
+        <div id="top">
+            <ui:insert name="top">
+                <br/>
+                <div align="center">
+                    <ui:include src="header.xhtml"/>
+                </div>
+                <br/>
+            </ui:insert>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content"></ui:insert>
+        </div>
+
+        <div id="bottom">
+            <ui:insert name="bottom">
+                <div align="center" class="footer">
+                    <label>
+                        <h3>Óptica Andes</h3>
+                        <img src="resources/images/logo.png" height="50px" width="80px"/>
+                    </label>
+                    <strong><hr style="width: 500px; color:#ddd;"/></strong>
+                    <br/>
+                    <label>
+                        <b>Dirección: </b> Carrera 9 # 7 - 66 
+                        <br/>
+                        <b>Tel. </b> +57 (2) 822 1630 
+                        <br/>
+                        <b>Cel. </b> +57 315 514 4895 
+                        <br/>
+                        <b>E-mail: </b> opticaandescauca@hotmail.com 
+                    </label>
+                </div>
+            </ui:insert>
+        </div>
+    </h:body>
+
+
+</html>

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="plantillas/main.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <div id="menu" align="center">
+                        <h:panelGrid columns="5" cellpadding="1" cellspacing="1" class="panelMenu" width="100%">
+                            <h:panelGroup>
+                                <h:commandButton id="home" value="INICIO" class="btn " action="index.xhtml"></h:commandButton>
+                                <h:commandButton id="ing" value="INGRESAR" class="btn" action="Login.xhtml"></h:commandButton>
+                                <h:commandButton id="reg" value="REGISTRARSE" class="btn btnHover"></h:commandButton>
+                                <h:commandButton id="prod" value="PRODUCTOS/SERVICIOS" class="btn" action="ProdServ.xhtml"></h:commandButton>
+                                <h:commandButton id="cont" value="CONTÁCTANOS" class="btn" action="Contactar.xhtml"></h:commandButton>
+                            </h:panelGroup>
+                        </h:panelGrid>
+                    </div>
+                </h:form>
+                <div align="center">
+                    <br/>
+                    <h:form>
+                        <div class="formRegistro">
+                            <!--<h:panelGrid columns="1" cellpadding="10" width="60%" style="text-align: center;">-->
+                            <h2>
+                                Datos de contacto
+                            </h2>
+                            <h:panelGrid columns="3" cellpadding="10" width="100%" style="text-align:left;">
+                                <h:outputLabel>
+                                    <strong>Nombre: </strong>
+                                    <h:inputText id="nom" 
+                                                 label="Nombre" 
+                                                 validatorMessage="Nombre requerido" 
+                                                 class="inpRes"
+                                                 p:placeholder="Nombre"/>
+                                </h:outputLabel>
+                                <h:outputLabel>
+                                    <strong>Apellido Paterno: </strong>
+                                    <h:inputText id="apP" 
+                                                 label="Apellido Paterno" 
+                                                 validatorMessage="Apellido requerido" 
+                                                 class="inpRes"
+                                                 p:placeholder="A. Paterno"/>
+                                </h:outputLabel>
+                                <h:outputLabel>
+                                    <strong>Apellido Materno: </strong>
+                                    <h:inputText id="apM" 
+                                                 label="Apellido Materno" 
+                                                 validatorMessage="Apellido requerido" 
+                                                 class="inpRes"
+                                                 p:placeholder="A. Materno"/>
+                                </h:outputLabel>
+                            </h:panelGrid>
+                            <h:panelGrid columns="1" cellpadding="10" width="20%" style="text-align:left;">
+                                <h:outputLabel >
+                                    <strong>Correo: </strong>
+                                    <h:inputText id="email" 
+                                                 label="Correo" 
+                                                 validatorMessage="Correo requerido" 
+                                                 class="inpRes"
+                                                 style="width: 250px;"
+                                                 p:placeholder="Correo"/>
+                                </h:outputLabel>
+                            </h:panelGrid>
+                            <h:panelGrid columns="2" cellpadding="10" width="50%" style="text-align:left;">
+                                <h:outputLabel>
+                                    <strong>Usuario: </strong>
+                                    <h:inputText id="user" 
+                                                 label="Usuario" 
+                                                 validatorMessage="Usuario requerido" 
+                                                 class="inpRes"
+                                                 p:placeholder="Usuario"/>
+                                </h:outputLabel>
+                                <h:outputLabel>
+                                    <strong>Contraseña: </strong>
+                                    <h:inputText id="pass" 
+                                                 label="Contraseña" 
+                                                 validatorMessage="Contraseña requerido" 
+                                                 class="inpRes"
+                                                 p:placeholder="Contraseña"/>
+                                </h:outputLabel>
+                            </h:panelGrid>
+                            <!--<div style="text-align: left;">-->
+                            <h:panelGrid columns="1" cellpadding="10" width="100%" style="text-align: right;">
+                                <h5>Todos lo campos son obligatorios</h5>
+                            </h:panelGrid>
+                            <!--</div>-->
+                            <h:panelGroup>
+                                <h:commandButton id="envReg" 
+                                                 action="index.xhtml" 
+                                                 value="Registrar" 
+                                                 class="btnL">
+
+                                </h:commandButton>
+                                <h:commandButton id="limpReg"
+                                                 type="reset" 
+                                                 value="Limpiar" 
+                                                 class="btnL">
+
+                                </h:commandButton>
+                            </h:panelGroup>
+                        </div>
+                        <!--</h:panelGrid>-->
+                    </h:form>
+                    <br/>
+                    <br/>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

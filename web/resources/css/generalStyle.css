@@ -356,3 +356,8 @@ textarea{
     cursor: pointer;
     width: 90px;
 }
+.add {
+    transition: 0.3s;
+    cursor: pointer;
+    width: 90px;
+}

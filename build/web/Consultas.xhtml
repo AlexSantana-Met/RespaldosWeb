@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="plantillas/main.xhtml">
+            <ui:define name="content">
+                <div id="menu" align="center">
+                    <h:panelGrid columns="2" cellpadding="1" cellspacing="1" class="panelSup" width="100%">
+                        <h:panelGroup>
+                            <h:form>
+                                <h:commandButton id="home" value="AGENDAR CITA" class="btn " action="index.xhtml"></h:commandButton>
+                                <h:commandButton id="ing" value="ORDENES" class="btn" action="Login.xhtml"></h:commandButton>
+                                <h:commandButton id="reg" value="CONSULTAS" class="btn btnHover"></h:commandButton>
+                                <h:commandButton id="prod" value="PERFIL" class="btn" action="ProdServ.xhtml"></h:commandButton>
+                                <h:commandButton value="Cerrar Sesión" action="index.xhtml" class="btnLog" id="logout"/>
+                            </h:form>
+                        </h:panelGroup>
+                    </h:panelGrid>
+                </div>
+                <br/>
+                <br/>
+                <div align="center">
+                    <h:dataTable id="tablaCon" value="#{con.con}" var="cons" captionClass="caption">
+                        <f:facet name="caption">Registro de consultas</f:facet>
+                        <h:column >
+                            <f:facet name="header">Fecha</f:facet>
+                                #{cons.fecha}
+                        </h:column> 
+                        <h:column >
+                            <f:facet name="header">Descripción</f:facet>
+                                #{cons.descripcion}
+                        </h:column>
+                        <h:column >
+                            <f:facet name="header">Estado</f:facet>
+                                #{cons.status}
+                        </h:column> 
+                        <h:column >
+                            <f:facet name="header">Respuesta</f:facet>
+                                #{cons.respuesta}
+                        </h:column>
+                    </h:dataTable>
+                    <br/>
+                    <br/>
+                    <!--                    <h:form>
+                                            <h:commandButton class="btnAdd agregar" value="Agregar" action="Citas.xhtml" id="new"/>
+                                        </h:form>-->
+                    <b:button id="add"  
+                              look="success"
+                              icon-awesome="plus"
+                              value="Agregar">
+                    </b:button>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
+</html>
+

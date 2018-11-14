@@ -21,6 +21,27 @@
                             </h:panelGroup>
                         </h:panelGrid>
                     </div>
+                    <div class="container">
+                    <form >
+
+
+                        <label for="nom">Nombre completo:</label>
+                        <h:inputText class="mensaje" id="nom" ></h:inputText>
+                       
+
+                        <label for="email">Email:</label>
+                        <h:inputText class="mensaje" id="email"></h:inputText>
+
+
+
+                        <label for="men">Mensaje:</label>
+                   
+                        <h:inputTextarea class="mensaje" id="men" style="height: 200px"></h:inputTextarea>
+                        <h:commandButton class="enviar" value="Enviar"></h:commandButton>
+
+
+                    </form>
+                </div>
                 </h:form>
             </ui:define>
         </ui:composition>

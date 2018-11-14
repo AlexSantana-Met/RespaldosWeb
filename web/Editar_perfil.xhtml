@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="plantillas/main.xhtml">
+            <ui:define name="content">
+                <div id="menu" align="center">
+                    <h:panelGrid columns="2" cellpadding="1" cellspacing="1" class="panelSup" width="100%">
+                        <h:panelGroup>
+                            <h:form>
+                                <h:commandButton id="home" value="AGENDAR CITA" class="bton " action="index.xhtml"></h:commandButton>
+                                <h:commandButton id="ing" value="ORDENES" class="bton" action="Login.xhtml"></h:commandButton>
+                                <h:commandButton id="reg" value="CONSULTAS" class="bton" action="Consultas.xhtml"></h:commandButton>
+                                <h:commandButton id="prod" value="PERFIL" class="bton btnHover" ></h:commandButton>
+                                <h:commandButton value="Cerrar Sesión" action="index.xhtml" class="btnLog" id="logout"/>
+                            </h:form>
+                        </h:panelGroup>
+                    </h:panelGrid>
+                </div>
+                <div >
+                    <div class="col-75">
+
+                        <form >
+
+
+
+                            <h3>informacion personal</h3>
+
+
+                            <label for="nom"> Nombre:</label>
+                            <h:inputText class="campo" id="nom" disabled="false" value="Jonathan" > </h:inputText>
+
+                            <label for="fname"> Apellido Paterno:</label>
+                            <h:inputText class="campo" id="pat" disabled="false" value="Cuesta" > </h:inputText>
+                            <label for="fname"> Apellido Materno: </label>
+                            <h:inputText class="campo" id="mom" disabled="false" value="Sanchez" > </h:inputText>
+                            <div>
+                                <label for="mail"> Correo</label>
+                                <h:inputText class="mensaje" id="mail" disabled="false" value="Jonathancuesta@mail.com" > </h:inputText>
+
+                                <label for="adr">Dirección</label>
+                                <h:inputText class="mensaje" id="dir" disabled="false" value=""  > </h:inputText>
+                                <label for="city"> Ciudad</label>
+                                <h:inputText class="mensaje" id="city" disabled="false" value="Bogota" > </h:inputText>
+                                <label for="adr"> Fecha de nacimiento</label>
+                                <h:inputText class="mensaje" id="born" disabled="false" value="13/12/1997" > </h:inputText>
+                            </div>
+
+
+                            <h:commandButton class="enviar" value="Guardar Cmabios"></h:commandButton>
+                        </form>
+
+                    </div>
+
+
+                </div>
+
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>

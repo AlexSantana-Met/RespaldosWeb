@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -25,7 +26,7 @@
                 </h:form>
                 <div align="center">
                     <br/>
-                    <h:form>
+                    <h:form id="formRegis">
                         <div class="formRegistro">
                             <!--<h:panelGrid columns="1" cellpadding="10" width="60%" style="text-align: center;">-->
                             <h2>
@@ -39,6 +40,7 @@
                                                  validatorMessage="Nombre requerido" 
                                                  class="inpRes"
                                                  p:placeholder="Nombre"
+                                                 autocomplete="false"
                                                  value="#{clienteBean.nombre}"/>
                                 </h:outputLabel>
                                 <h:outputLabel>
@@ -48,6 +50,7 @@
                                                  validatorMessage="Apellido requerido" 
                                                  class="inpRes"
                                                  p:placeholder="A. Paterno"
+                                                 autocomplete="false"
                                                  value="#{clienteBean.apPaterno}"/>
                                 </h:outputLabel>
                                 <h:outputLabel>
@@ -57,10 +60,11 @@
                                                  validatorMessage="Apellido requerido" 
                                                  class="inpRes"
                                                  p:placeholder="A. Materno"
+                                                 autocomplete="false"
                                                  value="#{clienteBean.apMaterno}"/>
                                 </h:outputLabel>
                             </h:panelGrid>
-                            <h:panelGrid columns="1" cellpadding="10" width="20%" style="text-align:left;">
+                            <h:panelGrid columns="2" cellpadding="10" width="20%" style="text-align:left;">
                                 <h:outputLabel >
                                     <strong>Correo: </strong>
                                     <h:inputText id="email" 
@@ -69,50 +73,39 @@
                                                  class="inpRes"
                                                  style="width: 250px;"
                                                  p:placeholder="Correo"
+                                                 autocomplete="false"
                                                  value="#{clienteBean.correo}"/>
-                                </h:outputLabel>
-                            </h:panelGrid>
-                            <h:panelGrid columns="2" cellpadding="10" width="50%" style="text-align:left;">
-                                <h:outputLabel>
-                                    <strong>Usuario: </strong>
-                                    <h:inputText id="user" 
-                                                 label="Usuario" 
-                                                 validatorMessage="Usuario requerido" 
-                                                 class="inpRes"
-                                                 p:placeholder="Usuario"/>
                                 </h:outputLabel>
                                 <h:outputLabel>
                                     <strong>Contraseña: </strong>
-                                    <h:inputText id="pass" 
-                                                 label="Contraseña" 
-                                                 validatorMessage="Contraseña requerido" 
-                                                 class="inpRes"
-                                                 p:placeholder="Contraseña"
-                                                 value="#{clienteBean.auxP}"/>
+                                    <h:inputSecret id="pass" 
+                                                   label="Contraseña" 
+                                                   validatorMessage="Contraseña requerido" 
+                                                   class="inpRes"
+                                                   p:placeholder="Contraseña"
+                                                   autocomplete="false"
+                                                   value="#{clienteBean.auxP}"/>
                                 </h:outputLabel>
                             </h:panelGrid>
-                            <!--<div style="text-align: left;">-->
                             <h:panelGrid columns="1" cellpadding="10" width="100%" style="text-align: right;">
                                 <h5>Todos los campos son obligatorios</h5>
                             </h:panelGrid>
-                            <!--</div>-->
                             <h:panelGroup>
                                 <h:commandButton id="envReg" 
                                                  action="#{clienteBean.registrarCliente()}" 
                                                  value="Registrar" 
                                                  class="btnL">
-
                                 </h:commandButton>
                                 <h:commandButton id="limpReg"
-                                                 type="reset" 
                                                  value="Limpiar" 
-                                                 class="btnL">
-
+                                                 class="btnL"
+                                                 action="#{clienteBean.limpiar()}">
                                 </h:commandButton>
                             </h:panelGroup>
                         </div>
-                        <!--</h:panelGrid>-->
                     </h:form>
+                    <h:messages infoClass="info" errorClass="error" id="mj" warnClass="normalM"/>
+                    <!--<h:message for="formRegis" id="messCorr" class="error"/>-->
                     <br/>
                     <br/>
                 </div>

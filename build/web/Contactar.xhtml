@@ -14,35 +14,43 @@
                         <h:panelGrid columns="5" cellpadding="1" cellspacing="1" class="panelMenu" width="100%">
                             <h:panelGroup>
                                 <h:commandButton id="home" value="INICIO" class="btn " action="index.xhtml"></h:commandButton>
-                                <h:commandButton id="ing" value="INGRESAR" class="btn"></h:commandButton>
+                                <h:commandButton id="ing" value="INGRESAR" class="btn" action="Login.xhtml"></h:commandButton>
                                 <h:commandButton id="reg" value="REGISTRARSE" class="btn" action="Registro.xhtml"></h:commandButton>
                                 <h:commandButton id="prod" value="PRODUCTOS/SERVICIOS" class="btn" action="ProdServ.xhtml"></h:commandButton>
-                                <h:commandButton id="cont" value="CONTÁCTANOS" class="btn btnHover" action="Contactar.xhtml"></h:commandButton>
+                                <h:commandButton id="cont" value="CONTÁCTANOS" class="btn btnHover"></h:commandButton>
                             </h:panelGroup>
                         </h:panelGrid>
                     </div>
-                    <div class="container">
-                    <form >
-
-
-                        <label for="nom">Nombre completo:</label>
-                        <h:inputText class="mensaje" id="nom" ></h:inputText>
-                       
-
-                        <label for="email">Email:</label>
-                        <h:inputText class="mensaje" id="email"></h:inputText>
-
-
-
-                        <label for="men">Mensaje:</label>
-                   
-                        <h:inputTextarea class="mensaje" id="men" style="height: 200px"></h:inputTextarea>
-                        <h:commandButton class="enviar" value="Enviar"></h:commandButton>
-
-
-                    </form>
-                </div>
                 </h:form>
+                <!--                <div class="container" align="center" style="width: 80%;">
+                                    <h:form>-->
+                <div align="center">
+                    <br/>
+                    <h:form >
+                        <div class="formContacto">
+                            <h:panelGrid columns="1" cellpadding="1" cellspacing="1" width="100%">
+                                <!--<label for="nom">Nombre completo:</label>-->
+                                <strong>Nombre: </strong>
+                                <h:outputLabel>
+                                    <h:inputText class="mensaje" id="nom" ></h:inputText>
+                                </h:outputLabel>
+                                <!--<label for="email">Email:</label>-->
+                                <strong>Correo: </strong>
+                                <h:outputLabel>
+
+                                    <h:inputText class="mensaje" id="email" ></h:inputText>
+                                </h:outputLabel>
+                                <!--<label for="men">Mensaje:</label>-->
+                                <strong>Mensaje: </strong>
+                                <h:outputLabel>
+
+                                    <h:inputTextarea class="mensaje" id="men" style="height: 100px; resize: none;"></h:inputTextarea>
+                                </h:outputLabel>
+                            </h:panelGrid>
+                            <h:commandButton class="enviar" value="Enviar"></h:commandButton>
+                        </div>
+                    </h:form>
+                </div>
             </ui:define>
         </ui:composition>
     </h:body>

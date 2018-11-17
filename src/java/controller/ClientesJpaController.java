@@ -23,6 +23,7 @@ import entity.Ordenes;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.transaction.UserTransaction;
 
 /**
@@ -312,6 +313,17 @@ public class ClientesJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+
+    public int getMaxId() {
+        int res = -1;
+        EntityManager em = getEntityManager();
+        List<Clientes> lista = new ArrayList<>();
+        TypedQuery<Clientes> query = em.createQuery("SELECT c FROM Clientes c", Clientes.class);
+        lista = query.getResultList();
+        res = lista.get(lista.size() - 1).getIdCliente();
+        return res;
+//            res = (res < clientes.getIdCliente()) ? clientes.getIdCliente() : res;
     }
 
 }

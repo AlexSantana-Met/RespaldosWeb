@@ -13,6 +13,8 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.Date;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.transaction.UserTransaction;
@@ -124,6 +126,17 @@ public class ClienteBean implements Serializable {
         this.auxP = auxP;
     }
 
+    public void limpiar() {
+        FacesContext fc = FacesContext.getCurrentInstance();
+        this.apMaterno = "";
+        this.apPaterno = "";
+        this.nombre = "";
+        this.correo = "";
+        this.auxP = "";
+//        fc.getMessages().remove();
+        fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "", null));
+    }
+
     public String registrarCliente() {
 //        ClientesFacade cf = new ClientesFacade();
 //        Clientes c = cf.registrarCliente(this);
@@ -136,29 +149,40 @@ public class ClienteBean implements Serializable {
 //            fc.addMessage("", new FacesMessage("Ha ocurrido un error en el registro, el correo utilizado ya ha sido registrado!"));
 //            return null;
 //        }
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OpticaAndes-PrograWebPU2");
-        UserTransaction utx = null;
+        FacesContext fc = FacesContext.getCurrentInstance();
+        if (this.nombre.isEmpty() || this.apPaterno.isEmpty() || this.apMaterno.isEmpty() || this.correo.isEmpty() || this.auxP.isEmpty()) {
+            fc.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Por favor, ingrese todos lo campos que se solicitan.", null));
+            System.out.println("Campos vacíos");
+            return null;
+        } else {
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("OpticaAndes-PrograWebPU2");
+            UserTransaction utx = null;
 
-        ClientesJpaController clientesJPA = new ClientesJpaController(utx, emf);
-        int id = clientesJPA.getClientesCount();
-        LoginBean nuevoLoginBean = new LoginBean(correo, auxP);
-        Login nuevoLogin = nuevoLoginBean.registroLogin();
-        Clientes c = null;
-        if (nuevoLogin != null) {
-            try {
-                c = new Clientes(id, nombre, apPaterno, apMaterno, nuevoLogin);
-                clientesJPA.create(c);
-                return "index.xhtml";
-            } catch (RollbackFailureException ex) {
-                System.out.println("Error en rollback" + ex);
-                return null;
-            } catch (Exception ex) {
-                System.out.println("Error en general" + ex);
+            ClientesJpaController clientesJPA = new ClientesJpaController(utx, emf);
+            int id = clientesJPA.getMaxId();
+            LoginBean nuevoLoginBean = new LoginBean(correo, auxP);
+            Login nuevoLogin = nuevoLoginBean.registroLogin();
+            Clientes c = null;
+            if (nuevoLogin != null) {
+                try {
+                    c = new Clientes(id, nombre, apPaterno, apMaterno, nuevoLogin);
+                    clientesJPA.create(c);
+                    fc.addMessage("", new FacesMessage("Se ha registrado exitosamente."));
+                    return null;
+                } catch (RollbackFailureException ex) {
+                    System.out.println("Error en rollback" + ex);
+                    fc.addMessage("", new FacesMessage("Ha ocurrido un error en su registro."));
+                    return null;
+                } catch (Exception ex) {
+                    System.out.println("Error en general" + ex);
+                    fc.addMessage("", new FacesMessage("Ha ocurrido un error en su registro."));
+                    return null;
+                }
+            } else {
+                System.out.println("Fuckin' Error");
+                fc.addMessage("", new FacesMessage("El correo que usted ingresó ya ha sido registrado anteriormente."));
                 return null;
             }
-        } else {
-            System.out.println("Fuckin' Error");
-            return null;
         }
     }
 

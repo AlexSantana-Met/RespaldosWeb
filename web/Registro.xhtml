@@ -38,7 +38,8 @@
                                                  label="Nombre" 
                                                  validatorMessage="Nombre requerido" 
                                                  class="inpRes"
-                                                 p:placeholder="Nombre"/>
+                                                 p:placeholder="Nombre"
+                                                 value="#{clienteBean.nombre}"/>
                                 </h:outputLabel>
                                 <h:outputLabel>
                                     <strong>Apellido Paterno: </strong>
@@ -46,7 +47,8 @@
                                                  label="Apellido Paterno" 
                                                  validatorMessage="Apellido requerido" 
                                                  class="inpRes"
-                                                 p:placeholder="A. Paterno"/>
+                                                 p:placeholder="A. Paterno"
+                                                 value="#{clienteBean.apPaterno}"/>
                                 </h:outputLabel>
                                 <h:outputLabel>
                                     <strong>Apellido Materno: </strong>
@@ -54,7 +56,8 @@
                                                  label="Apellido Materno" 
                                                  validatorMessage="Apellido requerido" 
                                                  class="inpRes"
-                                                 p:placeholder="A. Materno"/>
+                                                 p:placeholder="A. Materno"
+                                                 value="#{clienteBean.apMaterno}"/>
                                 </h:outputLabel>
                             </h:panelGrid>
                             <h:panelGrid columns="1" cellpadding="10" width="20%" style="text-align:left;">
@@ -65,7 +68,8 @@
                                                  validatorMessage="Correo requerido" 
                                                  class="inpRes"
                                                  style="width: 250px;"
-                                                 p:placeholder="Correo"/>
+                                                 p:placeholder="Correo"
+                                                 value="#{clienteBean.correo}"/>
                                 </h:outputLabel>
                             </h:panelGrid>
                             <h:panelGrid columns="2" cellpadding="10" width="50%" style="text-align:left;">
@@ -83,7 +87,8 @@
                                                  label="Contraseña" 
                                                  validatorMessage="Contraseña requerido" 
                                                  class="inpRes"
-                                                 p:placeholder="Contraseña"/>
+                                                 p:placeholder="Contraseña"
+                                                 value="#{clienteBean.auxP}"/>
                                 </h:outputLabel>
                             </h:panelGrid>
                             <!--<div style="text-align: left;">-->
@@ -93,7 +98,7 @@
                             <!--</div>-->
                             <h:panelGroup>
                                 <h:commandButton id="envReg" 
-                                                 action="index.xhtml" 
+                                                 action="#{clienteBean.registrarCliente()}" 
                                                  value="Registrar" 
                                                  class="btnL">
 

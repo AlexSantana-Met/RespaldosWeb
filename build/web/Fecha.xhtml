@@ -29,19 +29,19 @@
     <h:body>
         <ui:composition template="plantillas/main.xhtml">
             <ui:define name="content">
-                <h:form>
-                    <div id="menu" align="center">
-                        <h:panelGrid columns="5" cellpadding="1" cellspacing="1" class="panelMenu" width="100%">
-                            <h:panelGroup>
-                                <h:commandButton id="home" value="INICIO" class="btn " action="index.xhtml"></h:commandButton>
-                                <h:commandButton id="ing" value="INGRESAR" class="btn btnHover"></h:commandButton>
-                                <h:commandButton id="reg" value="REGISTRARSE" class="btn" action="Registro.xhtml"></h:commandButton>
-                                <h:commandButton id="prod" value="PRODUCTOS/SERVICIOS" class="btn" action="ProdServ.xhtml"></h:commandButton>
-                                <h:commandButton id="cont" value="CONTÁCTANOS" class="btn" action="Contactar.xhtml"></h:commandButton>
-                            </h:panelGroup>
-                        </h:panelGrid>
-                    </div>
-                </h:form>
+                <div id="menu" align="center">
+                    <h:panelGrid columns="2" cellpadding="1" cellspacing="1" class="panelSup" width="100%">
+                        <h:panelGroup>
+                            <h:form>
+                                <h:commandButton id="age" value="AGENDAR CITA" class="bton btnHover"></h:commandButton>
+                                <h:commandButton id="ing" value="ORDENES" class="bton" action="ConsultaOrdenes.xhtml"></h:commandButton>
+                                <h:commandButton id="reg" value="CONSULTAS" class="bton" action="Consultas.xhtml"></h:commandButton>
+                                <h:commandButton id="prod" value="PERFIL" class="bton" action="perfil.xhtml"></h:commandButton>
+                                <h:commandButton value="Cerrar Sesión" action="index.xhtml" class="btnLog" id="logout"/>
+                            </h:form>
+                        </h:panelGroup>
+                    </h:panelGrid>
+                </div>
                 <div align="center">
                     <br/>
                     <br/>
@@ -50,7 +50,7 @@
                             <p:outputLabel for="inline" value="Seleccione la fecha a asignar su cita:" />
                             <p:outputLabel for="tablaCli" value="Seleccione la Hora a asignar su cita:" />
                             <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" />
-                           
+
                             <h:dataTable id="tablaCli" value="#{hora.hora}" var="dato" captionClass="caption" styleClass="tabla">
 
                                 <h:column >
@@ -65,12 +65,12 @@
                                               icon-awesome="plus"
                                               value="Apartar">
                                     </b:button>
-                                    </h:column>
+                                </h:column>
                             </h:dataTable>
                             <br/>
                             <br/>
                             <h:form>
-                              <h:commandButton class="add" value="Enviar asignaión" action="Formulario.xhtml"/>
+                                <h:commandButton class="add" value="Enviar asignaión" action="Formulario.xhtml"/>
                             </h:form>
                         </h:panelGrid>
                     </h:form>

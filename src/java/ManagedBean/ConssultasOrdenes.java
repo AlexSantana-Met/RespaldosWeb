@@ -5,7 +5,7 @@
  */
 package ManagedBean;
 
-import Control.consultaOrdenes;
+import controller.consultaOrdenes;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 

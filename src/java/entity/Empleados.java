@@ -1,0 +1,158 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package entity;
+
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+/**
+ *
+ * @author Alejandro
+ */
+@Entity
+@Table(name = "empleados")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Empleados.findAll", query = "SELECT e FROM Empleados e")
+    , @NamedQuery(name = "Empleados.findByIdEmpleado", query = "SELECT e FROM Empleados e WHERE e.idEmpleado = :idEmpleado")
+    , @NamedQuery(name = "Empleados.findByArea", query = "SELECT e FROM Empleados e WHERE e.area = :area")
+    , @NamedQuery(name = "Empleados.findByNombre", query = "SELECT e FROM Empleados e WHERE e.nombre = :nombre")
+    , @NamedQuery(name = "Empleados.findByApPaterno", query = "SELECT e FROM Empleados e WHERE e.apPaterno = :apPaterno")
+    , @NamedQuery(name = "Empleados.findByApMaterno", query = "SELECT e FROM Empleados e WHERE e.apMaterno = :apMaterno")})
+public class Empleados implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "ID_EMPLEADO")
+    private Integer idEmpleado;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 30)
+    @Column(name = "AREA")
+    private String area;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 20)
+    @Column(name = "NOMBRE")
+    private String nombre;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 15)
+    @Column(name = "AP_PATERNO")
+    private String apPaterno;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 15)
+    @Column(name = "AP_MATERNO")
+    private String apMaterno;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "empleadosId")
+    private List<Citas> citasList;
+
+    public Empleados() {
+    }
+
+    public Empleados(Integer idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
+    public Empleados(Integer idEmpleado, String area, String nombre, String apPaterno, String apMaterno) {
+        this.idEmpleado = idEmpleado;
+        this.area = area;
+        this.nombre = nombre;
+        this.apPaterno = apPaterno;
+        this.apMaterno = apMaterno;
+    }
+
+    public Integer getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(Integer idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApPaterno() {
+        return apPaterno;
+    }
+
+    public void setApPaterno(String apPaterno) {
+        this.apPaterno = apPaterno;
+    }
+
+    public String getApMaterno() {
+        return apMaterno;
+    }
+
+    public void setApMaterno(String apMaterno) {
+        this.apMaterno = apMaterno;
+    }
+
+    @XmlTransient
+    public List<Citas> getCitasList() {
+        return citasList;
+    }
+
+    public void setCitasList(List<Citas> citasList) {
+        this.citasList = citasList;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (idEmpleado != null ? idEmpleado.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Empleados)) {
+            return false;
+        }
+        Empleados other = (Empleados) object;
+        if ((this.idEmpleado == null && other.idEmpleado != null) || (this.idEmpleado != null && !this.idEmpleado.equals(other.idEmpleado))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "entity.Empleados[ idEmpleado=" + idEmpleado + " ]";
+    }
+    
+}

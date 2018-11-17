@@ -12,20 +12,22 @@
             <ui:define name="content">
                 <h:form>
                     <div id="menu" align="center">
-                        <h:panelGrid columns="5" cellpadding="1" cellspacing="1" class="panelMenu" width="100%">
-                            <h:panelGroup>
-                                <h:commandButton id="home" value="INICIO" class="btn " action="index.xhtml"></h:commandButton>
-                                <h:commandButton id="ing" value="INGRESAR" class="btn" action="Login.xhtml"></h:commandButton>
-                                <h:commandButton id="reg" value="REGISTRARSE" class="btn btnHover"></h:commandButton>
-                                <h:commandButton id="prod" value="PRODUCTOS/SERVICIOS" class="btn" action="ProdServ.xhtml"></h:commandButton>
-                                <h:commandButton id="cont" value="CONTÁCTANOS" class="btn" action="Contactar.xhtml"></h:commandButton>
-                            </h:panelGroup>
-                        </h:panelGrid>
+                        <h:panelGrid columns="2" cellpadding="1" cellspacing="1" class="panelSup" width="100%">
+                        <h:panelGroup>
+                            <h:form>
+                                <h:commandButton id="age" value="AGENDAR CITA" class="bton btnHover" action="Fecha.xhtml"></h:commandButton>
+                                <h:commandButton id="ing" value="ORDENES" class="bton btnHover" ></h:commandButton>
+                                <h:commandButton id="reg" value="CONSULTAS" class="bton" action="Consultas.xhtml"></h:commandButton>
+                                <h:commandButton id="prod" value="PERFIL" class="bton" action="perfil.xhtml"></h:commandButton>
+                                <h:commandButton value="Cerrar Sesión" action="index.xhtml" class="btnLog" id="logout"/>
+                            </h:form>
+                        </h:panelGroup>
+                    </h:panelGrid>
                     </div>
                 </h:form>
                 <div align="center">
                     <br/>
-                   
+
                     <h:dataTable id="tablaCon" value="#{cono.con}" var="cons" captionClass="caption">
                         <f:facet name="caption">Registro de ordenes </f:facet>
                         <h:column >
@@ -45,8 +47,8 @@
                                 #{cons.estado}
                         </h:column>
                     </h:dataTable>
-                    
-                    
+
+
                     <br/>
                     <br/>
                 </div>

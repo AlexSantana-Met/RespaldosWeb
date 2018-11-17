@@ -5,7 +5,7 @@
  */
 package ManagedBean;
 
-import Control.Consulta;
+import controller.Consulta;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 

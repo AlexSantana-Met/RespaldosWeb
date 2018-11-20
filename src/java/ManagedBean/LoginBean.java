@@ -53,7 +53,7 @@ public class LoginBean {
     }
 
     public Login registroLogin() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OpticaAndes-PrograWebPU2");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OpticaAndes-Persist");
         UserTransaction utx = null;
 
         LoginJpaController loginJPA = new LoginJpaController(utx, emf);
@@ -63,10 +63,10 @@ public class LoginBean {
             loginJPA.create(login);
             return login;            
         } catch (RollbackFailureException ex) {
-            System.out.println("Error en rollback");
+            System.out.println("Error en rollback, login");
             return null;
         } catch (Exception ex) {
-            System.out.println("Error en inserción");
+            System.out.println("Error en inserción, login");
             return null;
         }
 //        LoginFacade lf = new LoginFacade();
